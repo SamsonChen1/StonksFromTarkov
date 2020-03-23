@@ -1,2 +1,6 @@
 venv/
-data/*
+data/trader.dat
+data/purchases/
+data/bids/
+data/asks
+.idea/

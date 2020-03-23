@@ -1,17 +1,7 @@
 
-class Reader():
+def get_asks(img):
+    # TODO
+    return -1
 
-    def __init__(self):
-        pass
-
-    @staticmethod
-    def read(img):
-        # TODO
-        pass
-
-    @staticmethod
-    def hash(img):
-        # TODO
-        pass
 
 

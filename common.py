@@ -1,6 +1,7 @@
 # Stores various common constants
 class Constants():
-    PURCHASE_INTERVAL = 0.99
+    from model import Confidence
+    PURCHASE_INTERVAL = Confidence.BAND_P01
     SELL_INTERVAL = 0.75
 
 

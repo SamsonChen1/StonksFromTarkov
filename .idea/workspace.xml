@@ -2,23 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a7107913-6704-49cc-b911-2d2fa0160a83" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/Engine.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/io/Robot.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/io/Serde.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/FeeModel.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/PricingModel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/StonksFromTarkov.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/StonksFromTarkov.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/io/MouseMover.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/io/ScreenshotManager.py" beforeDir="false" afterPath="$PROJECT_DIR$/io/ScreenshotManager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/io/Scribe.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/io/Typist.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ocr/Reader.py" beforeDir="false" afterPath="$PROJECT_DIR$/ocr/Reader.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common.py" beforeDir="false" afterPath="$PROJECT_DIR$/common.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/FeeModel.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/FeeModel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/PricingModel.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/PricingModel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -71,6 +59,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="718" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1584945924559" />
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1584971597242">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584971597242" />
     <state x="461" y="162" key="SettingsEditor" timestamp="1584942753520">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -79,5 +71,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="661" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584942742419" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1584973247348">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1584973247348" />
   </component>
 </project>

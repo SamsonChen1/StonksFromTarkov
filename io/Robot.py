@@ -68,8 +68,8 @@ _VK_CODE = {
     'z': 0x5A,
 }
 
-def long_sleep():
-    time.sleep(10)
+def long_sleep(seconds=1):
+    time.sleep(1)
 
 def short_sleep():
     time.sleep(np.random.uniform(.001, .003))

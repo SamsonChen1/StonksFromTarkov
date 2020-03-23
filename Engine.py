@@ -1,11 +1,5 @@
 import logging
 import time
-
-from io import (
-    ScreenshotManager,
-    Robot,
-    Serde
-)
 from common import (
     Constants,
     Rectangle,
@@ -14,71 +8,54 @@ from common import (
     Ask,
     Purchase
 )
-from ocr import Reader
+from io import Serde
 from model.PricingModel import PricingModel
 from model.FeeModel import FeeModel
 
 
 class Engine():
 
-    # TODO move these location constants to commons #
-    def ask_aoi(self):
-        # TODO
-        return Rectangle(-1, -1, -1, -1)
+    def __init__(self, item, io_manager):
+        self.item = item
+        self.io = io_manager
+        self.asks = Serde.get_asks(self.item)
+        self.trader = self.io.get_trader()
+        self.offers = Serde.get_offers(self.item)
 
-    def purchase_button_location(self):
-        # TODO
-        return [-1, -1]
+        # Models
+        self.pricing_model = PricingModel(self.asks)
+        self.fee_model = FeeModel(self.pricing_model, self.offers)
 
-    def purchase_all_location(self):
-        # TODO
-        return [-1, -1]
-
-    def get_current_trader(self):
-        # TODO
-        return Trader(-1, -1)
-
-    def did_buy_succeed(self):
-        # TODO take a screenshot and check
-        return False
-
-    def buy_lowest_ask(self):
-        # TODO use Robot to buy
-        Robot.move_relative(*self.purchase_button_location())
-        Robot.click()
-        Robot.move_relative(*self.purchase_all_location())
-        Robot.click()
-        Robot.type('y')
-        return self.did_buy_succeed()
-
-    def sell_first_item(self, price):
-        # TODO use Robot to sell
-        pass
-
-    def __init__(self):
-        # TODO define contract
-        self.pricing_model = PricingModel(-1)
-        pass
+    def should_purchase(self, price, sell_price):
+        return self.fee_model.predict(price) + price < sell_price
 
     def run(self):
-        # Check for asks 3
-        ask_screenshot = ScreenshotManager.capture(self.ask_aoi())
-        current_asks = Reader.get_asks(ask_screenshot)
+        current_asks = self.io.get_asks()
 
         # Actions #
         # Check if we should buy #
-        lowest_ask = min(current_asks, key=lambda x: x.price)
-        if lowest_ask.price < self.pricing_model.confidence_interval(Constants.PURCHASE_INTERVAL):
-            if not self.buy_lowest_ask():
+        lowest_ask = current_asks[0]
+        second_lowest_ask = current_asks[1]
+        if self.should_purchase(lowest_ask.price, second_lowest_ask):  # TODO do we want to sell higher?
+            if not self.io.buy_lowest_ask():
                 logging.info("Failed to make a purchase!")
             else:
-                Robot.long_sleep()
-                # Sell #
-                self.sell_first_item(self.pricing_model.confidence_interval(Constants.SELL_INTERVAL))
-                # TODO finish this logic
+                logging.info("Made a purchase")
+                while self.trader.offer_count >= Constants.MAX_OFFERS:
+                    logging.info("Max offers already placed, can't sell yet...")
+                    self.io.wait(10)
+                offer = self.io.sell_first_item(second_lowest_ask - 1)
+                if not offer:
+                    raise Exception("Failed to make an offer!")
+                else:
+                    logging.info("Placed an offer")
+                    Serde.record_offer(offer)  # TODO bg this
+                    Serde.record_trader(self.trader)  # TODO bg this
+                    self.trader = self.io.get_trader()
 
         # Record keeping #
         # TODO bg these
-        PricingModel.update(self.asks)
+        self.pricing_model.update(self.asks)
+        self.fee_model.update(self.pricing_model, self.asks)
         for a in current_asks:
             Serde.record_ask(a)

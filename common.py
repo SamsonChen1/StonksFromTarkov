@@ -2,7 +2,8 @@
 class Constants():
     from model import Confidence
     PURCHASE_INTERVAL = Confidence.BAND_P01
-    SELL_INTERVAL = 0.75
+    SELL_INTERVAL = Confidence.BAND_P05
+    MAX_OFFERS = 2
 
 
 # Data type used to describe a rectangle
@@ -12,6 +13,7 @@ class Rectangle():
         self.y = y
         self.w = w
         self.h = h
+
 
 # Data type used to represent an offer.
 # id is the unique ID of the item, used to identify a later offer on this same item.

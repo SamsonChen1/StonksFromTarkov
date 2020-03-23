@@ -20,14 +20,12 @@ class PricingModel:
             self._model[band] = GradientBoostingRegressor(loss="quantile", alpha=band)
             self._model[band].fit(x, y)
 
-    def __init__(self, pricing_model, data):
+    def __init__(self, data):
         self._raw_data = data
-        self._pricing_model = pricing_model
         self._train()
 
-    def update(self, pricing_model, training_data):
+    def update(self, training_data):
         self._raw_data += training_data
-        self._pricing_model = pricing_model
         self._train()
 
     def predict(self):

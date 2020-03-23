@@ -2,12 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a7107913-6704-49cc-b911-2d2fa0160a83" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/io/IoManager.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine.py" beforeDir="false" afterPath="$PROJECT_DIR$/Engine.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common.py" beforeDir="false" afterPath="$PROJECT_DIR$/common.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/io/Robot.py" beforeDir="false" afterPath="$PROJECT_DIR$/io/Robot.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/model/FeeModel.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/FeeModel.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/model/PricingModel.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/PricingModel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

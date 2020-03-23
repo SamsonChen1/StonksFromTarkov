@@ -30,7 +30,7 @@ class FeeModel():
         self._pricing_model = pricing_model
         self._train()
 
-    def estimate(self, price):
+    def predict(self, price):
         return self._model.predict([
             price,
             self._pricing_model.confidence_interval(Confidence.BAND_P99),

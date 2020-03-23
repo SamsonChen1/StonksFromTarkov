@@ -1,6 +1,4 @@
 venv/
-data/trader.dat
-data/purchases/
-data/bids/
-data/asks
+*.dat
+**.dat
 .idea/
